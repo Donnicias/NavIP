@@ -6,8 +6,8 @@
  * Time: 9:25 AM
  */
 
-namespace Don\NavIP\Provider;
-use Don\NavIP\Engine\Manager;
+namespace Donnicias\NavIP\Provider;
+use Donnicias\NavIP\Engine\Manager;
 use Illuminate\Support\ServiceProvider;
 
 class NavIPServiceProvider extends  ServiceProvider

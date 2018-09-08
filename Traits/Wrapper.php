@@ -9,8 +9,8 @@
 | ---------------------------------------------------------------------------------------
  */
 
-namespace Don\NavIP\Traits;
-use Don\NavIP\Core\StreamHandler;
+namespace Donnicias\NavIP\Traits;
+use Donnicias\NavIP\Core\StreamHandler;
 
 Trait Wrapper
 {
