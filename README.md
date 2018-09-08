@@ -12,7 +12,7 @@ Now proceed to require the package.
 
 ### General Install
 
-Run `composer require donnicias/nav-ip` to get the latest stable version of the package.
+Run `composer require donnicias/nav_ip` to get the latest stable version of the package.
 
 ### Laravel
 
@@ -21,11 +21,11 @@ include the service provider and its alias within your `config/app.php`.
 
 ```php
 'providers' => [
-    Donnicias\\NavIP\\Provider\\NavIPServiceProvider
+    \donnicias\nav_ip\Provider\NavIPServiceProvider::class
 ],
 
 'aliases' => [
-    "Nav"=> Donnicias\\NavIP\\Facades\\Nav
+    'Nav' => \donnicias\nav_ip\Facades\Nav::class
 ],
 ```
 
@@ -95,7 +95,7 @@ The following demonstrates how to use the package
 
 ```php
 namespace App\Http\Controllers;
-use Donnicias\NavIP\Facades\Nav;
+use donnicias\nav_ip\Facades\Nav;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
