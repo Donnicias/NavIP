@@ -1,11 +1,12 @@
+
 {
-    "name": "donnicias/nav-ip",
+    "name": "Donnicias/NavIP",
     "description": "This is a complete package for managing inetegrations between Microsoft Dynamics Nav and laravel applications. It makes the integration abreeze.",
     "type": "laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mayaka Donnicias",
+            "name": "Donnicias Mayaka",
             "email": "mayakadonnicias@gmail.com"
         }
     ],
@@ -15,13 +16,13 @@
             "Support/helper.php"
         ],
         "psr-4": {
-            "Donnicias\\NavIP\\": "src/"
+            "donnicias\\nav-ip\\": "/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Donnicias\\NavIP\\Provider\\NavIPServiceProvider"
+                "Donnicias\\NavIp\\Provider\\NavIPServiceProvider"
             ],
             "aliases": {
                 "Nav": "Donnicias\\NavIP\\Facades\\Nav"
