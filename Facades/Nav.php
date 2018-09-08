@@ -6,7 +6,7 @@
  * Time: 10:03 AM
  */
 
-namespace Donnicias\NavIP\Facades;
+namespace donnicias\nav_ip\Facades;
 use Illuminate\Support\Facades\Facade;
 
 class Nav extends Facade

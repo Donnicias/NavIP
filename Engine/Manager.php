@@ -9,9 +9,9 @@
  | ---------------------------------------------------------------------------------------
  */
 
-namespace Donnicias\NavIP\Engine;
-use Donnicias\NavIP\Core\Client;
-use Donnicias\NavIP\Traits\Wrapper;
+namespace donnicias\nav_ip\Engine;
+use donnicias\nav_ip\Core\Client;
+use donnicias\nav_ip\Traits\Wrapper;
 
 class Manager
 {

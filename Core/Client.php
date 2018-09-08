@@ -9,7 +9,7 @@
 | ---------------------------------------------------------------------------------------
  */
 
-namespace Donnicias\NavIP\Core;
+namespace donnicias\nav_ip\Core;
 use SoapClient;
 
 define('USERPWD', config('nav.Auth_Mode.NTLM.Domain').'\\'.config('nav.Auth_Mode.NTLM.Username').':'.config('nav.Auth_Mode.NTLM.Password'));

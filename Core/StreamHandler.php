@@ -9,7 +9,7 @@
 | ---------------------------------------------------------------------------------------
  */
 
-namespace Donnicias\NavIP\Core;
+namespace donnicias\nav_ip\Core;
 
 class StreamHandler
 {
