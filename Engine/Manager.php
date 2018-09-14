@@ -78,7 +78,7 @@ class Manager
     {
         try{
             $client = new Client(Manager::resolveUrl($service, 'Page'), ['trace' => 1]);
-            $client->Delete((object)[$service => $param->Key]);
+            $client->Delete((object)['Key'=>$param->Key]);
             return "Record deleted.";
         }catch(\Exception $e){
             return $e->getMessage();

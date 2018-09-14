@@ -3,6 +3,7 @@
 This is a Laravel package for the integration between Microsoft Dynamics Nav and Laravel Applications. 
 The package allows a user to perform CRUD operations with Nav API.
 
+
 ## Installation
 
 Pull in the package through Composer.
