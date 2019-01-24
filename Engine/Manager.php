@@ -34,20 +34,20 @@ class Manager
     }
 
     /**
-     * @param null $params ~ Filters
+     * @param null $filters ~ Filters
      * @param $service ~ Service to be invoked
      * @param null $method ~ Method to call, for codeunit
      * @param null $size ~ Return size of the result
      * @return string
      */
-    public function Read($params, $service, $method=null, $size=null)
+    public function Read($filters, $service, $method=null, $size=null)
     {
         try {
             $client = new Client(Manager::resolveUrl($service, $method ? 'Codeunit' : 'Page'), ['trace' => 1]);
             if ($method) {
-                return $client->$method($params);
+                return $client->$method($filters);
             } else {
-                return $client->ReadMultiple(['filter' => $params ?: '', 'setSize' => $size])->ReadMultiple_Result;
+                return $client->ReadMultiple(['filter' => $filters ?: '', 'setSize' => $size])->ReadMultiple_Result;
             }
         }catch (\Exception $e){
             return $e->getMessage();
@@ -70,15 +70,15 @@ class Manager
     }
 
     /**
-     * @param $param ~ Record to be deleted in Nav
+     * @param $record ~ Record to be deleted in Nav
      * @param $service ~ Service to invoke to delete the record
      * @return string ~ return response
      */
-    public function Delete($param, $service)
+    public function Delete($record, $service)
     {
         try{
             $client = new Client(Manager::resolveUrl($service, 'Page'), ['trace' => 1]);
-            $client->Delete((object)['Key'=>$param->Key]);
+            $client->Delete(['Key'=>$record->Key]);
             return "Record deleted.";
         }catch(\Exception $e){
             return $e->getMessage();
@@ -86,30 +86,30 @@ class Manager
     }
 
     /**
-     * @param $param ~ Record to be updated. Required
+     * @param $record ~ Record to be updated. Required
      * @param $service ~ Service name to be invoked. Required
      * @return string
      */
-    public function Update($param, $service)
+    public function Update($record, $service)
     {
         try {
             $client = new Client(Manager::resolveUrl($service, 'Page'), ['trace' => 1]);
-            return $client->Update((object)[$service => (object)$param]);
+            return $client->Update((object)[$service => (object)$record]);
         }catch(\Exception $e){
             return $e->getMessage();
         }
     }
 
     /**
-     * @param $param ~ Rec to be updated
+     * @param $record ~ Rec to be updated
      * @param $service ~ Service end point to invoke
      * @return string ~ Operation response
      */
-    public function Sync($param, $service){
+    public function Sync($record, $service){
         try {
             $sync_field = config('nav.Sync_Field');
-            $param->$sync_field = config('nav.Default_Sync_Value');
-            return Manager::Update($param, $service);
+            $record->$sync_field = config('nav.Default_Sync_Value');
+            return Manager::Update($record, $service);
         }catch(\Exception $e){
             return $e;
         }
